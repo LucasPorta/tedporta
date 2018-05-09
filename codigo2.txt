@@ -1,0 +1,19 @@
+entity divisor_clock is
+  port( clk: in STD_LOGIC;
+        div_clk: out STD_LOGIC);
+end divisor_clock;
+
+arquitecture behavioralofdivisor_clock is
+
+begin
+  process(clk)
+      variable cont: integer;
+begin
+  if (rising_edge(clk)) then 
+      cont: = cont+1;
+    end if;
+  if (cont=25) then 
+      div_clk <= not div_clk
+      cont: = 0;
+    end if;
+end behavioral;
